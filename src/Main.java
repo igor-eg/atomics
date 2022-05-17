@@ -9,13 +9,12 @@ public class Main {
     static LongAdder stat = new LongAdder();
 
     public static void main(String args[]) throws InterruptedException, ExecutionException {
-        int numberThreads = 5;
-
+        final int NUMBER_THREADS = 5;
         Shops shop = new Shops();
         List<Shops> shops = new ArrayList<>();
         ExecutorService ex = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 
-        for (int i = 0; i < numberThreads; i++) {
+        for (int i = 0; i < NUMBER_THREADS; i++) {
             shops.add(new Shops());
         }
 

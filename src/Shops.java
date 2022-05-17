@@ -7,12 +7,12 @@ public class Shops implements Callable<String> {
 
     @Override
     public String call() throws Exception {
-        int numberOfStoreTransactions = 5;
-        int theLowerBoundOfTheRandomSalePrice = 10;
-        int theUpperBoundOfTheRandomSalePrice = 100;
+        final int NUMBER_OF_STORE_TRANSACTIONS = 5;
+        final int THE_LOWER_BOUND_OF_THE_RANDOM_SALE_PRICE = 10;
+        final int THE_LOWER_UPPER_OF_THE_RANDOM_SALE_PRICE = 100;
 
-        List<Integer> intList = new Random().ints(numberOfStoreTransactions,
-                        theLowerBoundOfTheRandomSalePrice, theUpperBoundOfTheRandomSalePrice)
+        List<Integer> intList = new Random().ints(NUMBER_OF_STORE_TRANSACTIONS,
+                        THE_LOWER_BOUND_OF_THE_RANDOM_SALE_PRICE, THE_LOWER_UPPER_OF_THE_RANDOM_SALE_PRICE)
                 .boxed()
                 .collect(Collectors.toList());
         for (Integer entry : intList) {
