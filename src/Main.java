@@ -7,9 +7,10 @@ import java.util.*;
 
 public class Main {
     static LongAdder stat = new LongAdder();
+    private static final int NUMBER_THREADS = 5;
 
     public static void main(String args[]) throws InterruptedException, ExecutionException {
-        final int NUMBER_THREADS = 5;
+
         Shops shop = new Shops();
         List<Shops> shops = new ArrayList<>();
         ExecutorService ex = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
